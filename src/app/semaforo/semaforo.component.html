@@ -1,0 +1,29 @@
+<div class="mainbody">
+<span>
+<div id="traffic-light">
+  <div id="stopLight" class="bulb"></div>
+  <div id="slowLight" class="bulb"></div>
+  <div id="goLight" class="bulb"></div>
+</div>
+</span>
+
+<span>
+  <div class="timeInput">
+    <form #myform="ngForm" (ngSubmit)="checkInterval(myform)" name="myForm">
+      <label for="stream">tempo di monitoraggio in secondi:</label><br>
+      <input type="number" id="time" name="time" value="dev.pus" ngModel required/> <br><br>
+      <input type="submit" value="start">
+    </form>
+    <form #stopform="ngForm" (ngSubmit)="stopCheck()" name="stopform">
+      <input type="submit" value="stop" > 
+    </form>
+    <br><br>
+    <form #runEx="ngForm" (ngSubmit)="runExample()" name="runEx">
+      <input type="submit" value="run example" >
+    </form>
+    <form #stopEx="ngForm" (ngSubmit)="stopExample()" name="stopEx">
+      <input type="submit" value="stop example" >
+    </form>
+    </div>
+</span>
+</div>

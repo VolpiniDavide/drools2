@@ -1,0 +1,47 @@
+
+<span class="logCreate">
+<form #myform="ngForm" (ngSubmit)="register(myform)">
+  <label for="stream">stream:</label><br>
+  <select id="stream" name="stream" value="dev.pus" ngModel required><br><br>
+    <option>SNORT
+    <option>ML
+    <option>NAGIOS
+  </select>
+  <label for="eventType">event-Type:</label><br>
+  <select id="eventType" name="eventType" value="abc" ngModel required><br><br>
+    <option>DDOS
+    <option>EXPLOIT
+    <option>SQL INJECTION
+    <option>XSS
+  </select>
+  <label for="riskLevelId">risk-Level-Id:</label><br>
+  <select id="riskLevelId" name="riskLevelId" value="abc" ngModel required><br><br>
+    <option>1
+    <option>2
+    <option>3
+    <option>4
+  </select>
+  <input type="submit" >
+</form>
+</span>
+
+
+<span *ngIf="responseJson" class="respon">
+
+  <h2>RESPONSE</h2>
+
+  <ul *ngFor="let resp of responseJson">
+    <li>
+      <label>livello d'allarme</label>
+       <span>{{resp.alarmLevel}}</span><br>
+      </li>
+       <li>
+       <label>tipo d'attacco sospettato</label>
+       <span>{{resp.eventType}}</span>
+      </li>
+      <li>
+        <label>dettagli</label>
+        <span>{{resp.message}}</span>
+       </li>
+  </ul>
+</span>
